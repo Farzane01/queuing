@@ -8,43 +8,80 @@
         <br><h1>Find your doctor and book an appointment!</h1><br>
     </div>
     <div class="section">
-        <div class="row">
-            <div class="col-xl-2">
-                <div class="card">
-                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                        <h2>Kevin Anderson</h2>
-                        <h3>Web Designer</h3>
-                        <div class="social-links mt-2">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-2">
-                <div class="card">
-                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                        <h2>Kevin Anderson</h2>
-                        <h3>Web Designer</h3>
-                        <div class="social-links mt-2">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <div class="">
+            <div class="row">
+                <div class="col-xl-2">
+                    <div class="card">
+                        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                            <div class="pt-3 text-center">
+                                <div class="fw-bold">Dr. Behrooz Gharib</div>
+                                Hematologist
+                            </div>
+                            <div class="pt-2 mt-2">
+                                <button type="button" class="btn btn-outline-primary">Reserve</button>
+                                <button type="button" class="btn btn-outline-info">View</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card col-xl-8">
-            <div class="card-body">
-                <h5 class="card-title">Appointment tracking</h5>
-                <div class="d-grid gap-2 mt-3">
-                    <button class="btn btn-primary" type="button">Check it now</button>
+        <div class="row ">
+            <div class="col-6">
+                <div class="card top-selling overflow-auto">
+
+                    <div class="card-body pt-3">
+                        <h5 class="card-title">Recent appointments <span>| Today</span></h5>
+
+                        <table class="table table-borderless">
+                            <tbody>
+                            <tr>
+                                <td><a href="#" class="text-primary fw-bold">Dr. Daneshmand</a></td>
+                                <td class="fw-bold">Atfal</td>
+                                <td>1402.03.10</td>
+                                <td>10:00</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="text-primary fw-bold">Dr. Gharib</a></td>
+                                <td class="fw-bold">Khoon</td>
+                                <td>1402.03.10</td>
+                                <td>09:00</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="text-primary fw-bold">Dr. Ezzati</a></td>
+                                <td class="fw-bold">Zanan</td>
+                                <td>1402.03.10</td>
+                                <td>08:30</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="text-primary fw-bold">Dr. Ezzati</a></td>
+                                <td class="fw-bold">Zanan</td>
+                                <td>1402.03.10</td>
+                                <td>08:00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body profile-card pt-3 d-flex flex-column ">
+                        <h5 class="card-title">Appointment Tracking</h5>
+                        <div class=" ">
+                            If you forget the appointment, enter your confirmation code and <strong>check it now!</strong>
+                        </div>
+                        <div class="pt-3 mt-2">
+                            <span class="col-form-label">
+                                <h5>Confirmation code:</h5>
+                            </span>
+                            <input type="text" class="form-control mb-3">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary">Check</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
