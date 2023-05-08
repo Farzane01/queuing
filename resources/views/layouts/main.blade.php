@@ -109,4 +109,16 @@
     @yield('content')
 </main>
 
+<!-- Footer -->
+<footer class="footer bg-light">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="/"> Farzane Rafiei</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
 </body>
