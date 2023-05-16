@@ -10,21 +10,24 @@
     <div class="section">
         <div class="">
             <div class="row">
-                <div class="col-xl-2">
-                    <div class="card">
-                        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                            <div class="pt-3 text-center">
-                                <div class="fw-bold">Dr. Behrooz Gharib</div>
-                                Hematologist
-                            </div>
-                            <div class="pt-2 mt-2">
-                                <button type="button" class="btn btn-outline-primary">Reserve</button>
-                                <button type="button" class="btn btn-outline-info">View</button>
+                @foreach($doctors as $doctor)
+                    <div class="col-xl-2">
+                        <div class="card">
+                            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                                <img src="@if($doctor->user->avatar == null) assets/img/noavatar.jpg @else {{$doctor->user->avatar}} @endif" alt="Profile" class="rounded-circle">
+                                <div class="pt-3 text-center">
+                                    <div class="fw-bold">{{$doctor->user->name}}</div>
+                                    {{$doctor->field}}
+                                </div>
+                                <div class="pt-2 mt-2">
+                                    <button type="button" class="btn btn-outline-primary">Reserve</button>
+                                    <button type="button" class="btn btn-outline-info">View</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
         <div class="row ">
