@@ -20,8 +20,29 @@
                                     {{$doctor->field}}
                                 </div>
                                 <div class="pt-2 mt-2">
-                                    <button type="button" class="btn btn-outline-primary">Reserve</button>
-                                    <button type="button" class="btn btn-outline-info">View</button>
+                                    <a class="btn btn-outline-primary" href="{{route('appointment.index',$doctor->user->id)}}">Reserve</a>
+                                    <!-- Basic Modal -->
+                                    <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#basicModal">
+                                        View
+                                    </button>
+                                    <div class="modal fade" id="basicModal" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Doctor Information</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h5>Phone: {{$doctor->phone}}</h5>
+                                                    <h5>Address: {{$doctor->address}}</h5>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End Basic Modal-->
+{{--                                    <button type="button" class="btn btn-outline-info">View</button>--}}
                                 </div>
                             </div>
                         </div>
@@ -39,30 +60,14 @@
 
                         <table class="table table-borderless">
                             <tbody>
-                            <tr>
-                                <td><a href="#" class="text-primary fw-bold">Dr. Daneshmand</a></td>
-                                <td class="fw-bold">Atfal</td>
-                                <td>1402.03.10</td>
-                                <td>10:00</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" class="text-primary fw-bold">Dr. Gharib</a></td>
-                                <td class="fw-bold">Khoon</td>
-                                <td>1402.03.10</td>
-                                <td>09:00</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" class="text-primary fw-bold">Dr. Ezzati</a></td>
-                                <td class="fw-bold">Zanan</td>
-                                <td>1402.03.10</td>
-                                <td>08:30</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" class="text-primary fw-bold">Dr. Ezzati</a></td>
-                                <td class="fw-bold">Zanan</td>
-                                <td>1402.03.10</td>
-                                <td>08:00</td>
-                            </tr>
+                            @foreach($appointments as $appointment)
+                                <tr>
+                                    <td><a href="#" class="text-primary fw-bold">{{$appointment->user->name}}</a></td>
+                                    <td class="fw-bold"></td>
+                                    <td>{{$appointment->date}}</td>
+                                    <td>{{$appointment->start_time}}</td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
