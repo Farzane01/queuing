@@ -62,7 +62,7 @@
                             <tbody>
                             @foreach($appointments as $appointment)
                                 <tr>
-                                    <td><a href="#" class="text-primary fw-bold">{{$appointment->user->name}}</a></td>
+                                    <td>{{$appointment->doctor_id}}</td>
                                     <td class="fw-bold"></td>
                                     <td>{{$appointment->date}}</td>
                                     <td>{{$appointment->start_time}}</td>

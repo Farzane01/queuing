@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->nullable();
             $table->foreignId('doctor_id');
             $table->date('date');
             $table->time('start_time');
             $table->time('end_time');
-            $table->string('confirmation_code',6);
+            $table->string('confirmation_code',6)->nullable();
             $table->timestamps();
         });
     }

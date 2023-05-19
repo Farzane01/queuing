@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('main');
 
 Route::get('/dashboard', 'App\Http\Controllers\HomeController@showDashboard')->name('dashboard');
-Route::get('/time-schedule', 'App\Http\Controllers\AppointmentController@create')->name('appointment.create');
-Route::post('/time-schedule/store', 'App\Http\Controllers\AppointmentController@store')->name('appointment.store');
+Route::get('/time-schedule', 'App\Http\Controllers\AppointmentController@create')->name('appointment.create')->middleware('auth');
+Route::post('/time-schedule/store', 'App\Http\Controllers\AppointmentController@store')->name('appointment.store')->middleware('auth');
 Route::get('/reservation/{doctor_id}', 'App\Http\Controllers\AppointmentController@index')->name('appointment.index')->middleware('auth');
 
 Auth::routes();

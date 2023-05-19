@@ -33,18 +33,31 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $appointmentsCount = (Carbon:: $request->endTime - $request->startTime)/ $request->duration;
-        dd($appointmentsCount);
-//        foreach ()
-//        {
-//            $appointment = Appointment::create([
-//                'doctor_id' => Auth::user()->id,
-//                'date' => $request->date,
-//                'start_time' => $request->,
-//                'end_time' ,
-//                ]
-//            );
-//        }
+        if($request->endTime <= $request->startTime)
+        {
+            return back();
+        }
+
+        $freeTime = strtotime($request->endTime) - strtotime($request->startTime);
+        $duration = intval($request->duration);
+        $appointmentsCount =intval($freeTime/$duration) ;
+
+//        $num = round($num / 15) * 15;
+
+
+        $count = 0;
+        while ($count < $appointmentsCount)
+        {
+            $appointment = Appointment::create([
+                    'doctor_id' => Auth::user()->id,
+                    'date' => $request->date,
+                    'start_time' => date("h:i:s", strtotime($request->startTime)),
+                    'end_time' => date("h:i:s", strtotime($request->startTime) + $duration) ,
+                ]
+            );
+            $count++;
+            $request->startTime = date("h:i:s",strtotime($request->startTime) + $duration);
+        }
     }
 
     /**

@@ -9,7 +9,7 @@
                 <div class="card">
                     <img src="{{($doctor->avatar == null) ? asset('assets/img/noavatar.jpg') : asset($doctor->avatar)}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{$doctor->name}}</h5>
+                        <h5 class="card-title">{{$doctor->name}} <br><span>{{$doctor->doctor->field}}</span></h5>
                         <p class="card-text"><strong>Address: </strong>{{$doctor->doctor->address}}</p>
                         <p class="card-text"><strong>Phone Number: </strong>{{$doctor->doctor->phone}}</p>
                     </div>

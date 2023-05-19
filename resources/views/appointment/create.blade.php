@@ -338,9 +338,9 @@
                                 <div class="col-sm-10">
                                     <select class="form-select" name="duration" aria-label="Default select example">
                                         <option selected>Open this select menu</option>
-                                        <option value="1">30 Minutes</option>
-                                        <option value="2">1 Hour</option>
-                                        <option value="3">1:30 Hours</option>
+                                        <option value="900">15 Minutes</option>
+                                        <option value="1800">30 Minutes</option>
+                                        <option value="3600">1 Hour</option>
                                     </select>
                                 </div>
                             </div>
